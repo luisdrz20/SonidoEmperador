@@ -8,8 +8,17 @@ namespace SonidoEmperador.AccesoDatos.Repositorio.IRepositorio
 {
     public interface IUnidadTrabajo : IDisposable
     {
-        //Aqui se van gregar todos los nuevos modelos
-        ICategoriaPaqueteRepositorio CategoriaPaquete { get; }
+        //Aqui se van  gregar todos los nuevos modelos
+  
+        ICategoriaRepositorio Categoria { get; }
+  
+        IProductoRepositorio Producto { get; }
+
+        IUsuarioAplicacionRepositorio UsuarioAplicacion { get; }
+
+        IPaqueteRepositorio Paquete { get; }
         Task Guardar();
+
     }
+
 }

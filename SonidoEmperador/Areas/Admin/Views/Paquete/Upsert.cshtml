@@ -1,0 +1,159 @@
+﻿@model SonidoEmperador.Modelos.ViewModels.PaqueteVM
+@using SonidoEmperador.Utilidades
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var titulo = "Crear nuevo paquete";
+}
+
+<form method="post" enctype="multipart/form-data">
+    @if (Model.Paquete.Id != 0)
+    {
+        titulo = "Editar RequisitosAdicionales";
+        <input asp-for="Paquete.Id" hidden/>
+        <input asp-for="Paquete.ImagenUrl" hidden />
+    }
+
+    <div class="border p-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <h2 class="text-info">@titulo</h2>
+        </div>
+
+        <div class="row">
+            <div class="col-8">
+                <div class="container">
+
+                    <!--Campo Nombre-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Nombre del Paquete</label>
+                            <input asp-for="Paquete.Nombre" class="form-control" />
+                            <span asp-validation-for="Paquete.Nombre" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <!--Campo descripcion-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Descripcion del Paquete</label>
+                            <input asp-for="Paquete.Descripcion" class="form-control" />
+                            <span asp-validation-for="Paquete.Descripcion" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <!--Campo precio-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Precio del Paquete</label>
+                            <input asp-for="Paquete.Precio" class="form-control" />
+                            <span asp-validation-for="Paquete.Precio" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <!--Campo duracion-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Duracion del Paquete</label>
+                            <input asp-for="Paquete.Duracion" class="form-control" />
+                            <span asp-validation-for="Paquete.Duracion" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <!--Campo Componentes-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Componentes Incluidos</label>
+                            <input asp-for="Paquete.Componentes" class="form-control" />
+                            <span asp-validation-for="Paquete.Componentes" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <!--Campo Requisitos adicionales-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Requisitos adicionales</label>
+                            <input asp-for="Paquete.RequisitosAdicionales" class="form-control" />
+                            <span asp-validation-for="Paquete.RequisitosAdicionales" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+                    <!--Campo Imagen-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Imagen del Paquete</label>
+                            <input type="file" accept="image/png,image/gif,image/jpeg" 
+                                    name="files" id="imagenId" class="form-control" />
+                            <span asp-validation-for="Paquete.ImagenUrl" class="text-danger"></span>
+                        </div>
+                    </div>
+
+       
+
+
+                    <!--Estado-->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Estado</label>
+                            <select asp-for="Paquete.Estado" class="form-select">
+                                <option value="true">Activo</option>
+                                <option value="false">Inactivo</option>
+                            </select>
+                            <span asp-validation-for="Paquete.Estado" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <!--Botones-->
+                    <br />
+                    <div class="d-grid gap-2 d-md-block">
+                        @if (Model.Paquete.Id != 0)
+                        {
+                            <partial name="_botonesActualizarYRegresar" model="Model.Paquete.Id" />
+                        }
+                        else
+                        {
+                            <button type="submit" onclick="return validarImagen()" class="btn btn-success">
+                                <i class="bi bi-plus-square-fill"></i>
+                                Crear
+                                
+                            </button>
+                            <a class="btn btn-success" asp-action="Index">
+                                <i class="bi bi-arrow-return-left"></i>
+                                Regresar
+                            </a>
+                        }
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--Mostra-->
+            <div class="col-4">
+                @if (Model.Paquete.Id != 0)
+                {
+                    <img src="@DS.ImagenRutaPaquetes@Model.Paquete.ImagenUrl"
+                    width="100" style="border-radius:5px;border:1px solid;color:cadetblue"/>
+                }
+
+            </div>
+        </div>
+
+
+    </div>
+
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        function validarImagen() {
+            if (document.getElementById("imagenId").value == "") {
+                swal("ERROR", "Seleccione una imagen", "error");
+                return false;
+            }
+            return true;
+        }
+    </script>
+}
+

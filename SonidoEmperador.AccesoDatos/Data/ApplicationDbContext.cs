@@ -11,7 +11,11 @@ namespace SonidoEmperador.AccesoDatos.Data
             : base(options)
         {
         }
-        public DbSet<CategoriaPaquete> CategoriaPaquetes { get; set; }
+
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Producto> Productos { get; set; }
+        public DbSet<UsuarioAplicacion> UsuarioAplicacion { get; set; }
+        public DbSet<Paquete> Paquetes { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

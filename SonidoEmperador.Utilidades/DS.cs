@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace SonidoEmperador.Utilidades
 {
-    public class DS
+    public static class DS
     {
+        public const string Exitosa = "Exitosa";
+        public const string Error = "Error";
+
+        public const string ImagenRuta = @"\imagenes\productos\";
+        public const string ImagenRutaPaquetes = @"\imagenes\paquetes\";
+
+        public const string Role_Admin = "Admin";
+        public const string Role_Cliente = "Cliente";
+        public const string Role_Inventario= "Inventario";
     }
 }
