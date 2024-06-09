@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SonidoEmperador.Utilidades
 {
+    //Aqui van muchas cosas para el envio d gmail. esta en el video  24-05-28
     public class EmailSender : IEmailSender
     {
         public Task SendEmailAsync(string email, string subject, string htmlMessage)

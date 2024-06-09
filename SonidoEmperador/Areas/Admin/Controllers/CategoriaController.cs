@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SonidoEmperador.AccesoDatos.Repositorio.IRepositorio;
 using SonidoEmperador.Modelos;
 using SonidoEmperador.Utilidades;
@@ -6,6 +7,7 @@ using SonidoEmperador.Utilidades;
 namespace SonidoEmperador.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = DS.Role_Admin)]
     public class CategoriaController : Controller
     {
         private readonly IUnidadTrabajo _unidadTrabajo;

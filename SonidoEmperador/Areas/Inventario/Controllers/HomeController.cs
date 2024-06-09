@@ -41,11 +41,11 @@ namespace SonidoEmperador.Areas.Inventario.Controllers
                 PageNumber = pageNumber,
                 PageSize = 4//Controla la cantidad de articulos por pagina
             };
-            var resultado = _unidadTrabajo.Producto.ObtenerTodosPaginado(parametros);
+            var resultado = _unidadTrabajo.Paquete.ObtenerTodosPaginado(parametros);
 
             if(!String.IsNullOrEmpty(busqueda))
             {
-                resultado = _unidadTrabajo.Producto.ObtenerTodosPaginado(parametros,
+                resultado = _unidadTrabajo.Paquete.ObtenerTodosPaginado(parametros,
                     p => p.Descripcion.Contains(busqueda));
             }
 

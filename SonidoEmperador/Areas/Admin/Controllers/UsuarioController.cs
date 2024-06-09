@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SonidoEmperador.AccesoDatos.Data;
 using SonidoEmperador.AccesoDatos.Repositorio.IRepositorio;
+using SonidoEmperador.Utilidades;
 
 namespace SonidoEmperador.Areas.Admin.Controllers
 {
 
     [Area("Admin")]
+    [Authorize(Roles = DS.Role_Admin)]
     public class UsuarioController : Controller
     {
 

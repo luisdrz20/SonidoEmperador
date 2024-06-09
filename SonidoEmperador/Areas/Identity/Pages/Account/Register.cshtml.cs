@@ -125,17 +125,7 @@ namespace SonidoEmperador.Areas.Identity.Pages.Account
         public async Task OnGetAsync(string returnUrl = null)
         {
             ReturnUrl = returnUrl;
-            Input = new InputModel()
-            {
-                ListaRol = _roleManager.Roles
-                            .Where(r=>r.Name != DS.Role_Cliente)
-                            .Select(n => n.Name)
-                            .Select(l=> new SelectListItem 
-                            {
-                                Text = l,
-                                Value = l
-                            })
-            };
+            
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
 
@@ -205,8 +195,8 @@ namespace SonidoEmperador.Areas.Identity.Pages.Account
                     //    values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                     //    protocol: Request.Scheme);
 
-                    //await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                    //    $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    //await _emailSender.SendEmailAsync(Input.Email, "Confirmar tu email",
+                    //    $"Confirma la cuenta en el enlace <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>click aqui</a>.");
                     
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
@@ -229,6 +219,17 @@ namespace SonidoEmperador.Areas.Identity.Pages.Account
                       
                     }
                 }
+                Input = new InputModel()
+                {
+                    ListaRol = _roleManager.Roles
+                            .Where(r => r.Name != DS.Role_Cliente)
+                            .Select(n => n.Name)
+                            .Select(l => new SelectListItem
+                            {
+                                Text = l,
+                                Value = l
+                            })
+                };
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SonidoEmperador.AccesoDatos.Repositorio.IRepositorio;
 using SonidoEmperador.Modelos;
 using SonidoEmperador.Modelos.ViewModels;
@@ -7,6 +8,7 @@ using SonidoEmperador.Utilidades;
 namespace SonidoEmperador.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = DS.Role_Admin + "," + DS.Role_Inventario)]
     public class PaqueteController : Controller
     {
         private readonly IUnidadTrabajo _unidadTrabajo;

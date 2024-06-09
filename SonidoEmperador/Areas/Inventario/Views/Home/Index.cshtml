@@ -1,31 +1,105 @@
-﻿@model SonidoEmperador.Modelos.Espesificaciones.PageList<SonidoEmperador.Modelos.Producto>
+﻿@model SonidoEmperador.Modelos.Espesificaciones.PageList<SonidoEmperador.Modelos.Paquete>
 @using SonidoEmperador.Utilidades
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <section>
-        <div class="bannerPrincipal ">
-            <div class="logo-container">
+
+
+    <!--SECCION BANNER PRINCIPAL-->
+    <div class="bannerPrincipal ">
+        <div class="logo-container">
             <img src="~/imagenes/componentespagina/logocha.png" alt="Logo" class="logo" />
-                <p class="banner-text">
-                    Explora nuestros servicios y descubre cómo podemos llevar tu evento al siguiente nivel.
-                </p>
-                <button class="botonBanner">Comenzar</button>
-            </div>
+            <p class="banner-text">
+                Explora nuestros servicios y descubre cómo podemos llevar tu evento al siguiente nivel.
+            </p>
+            <button class="botonBanner">Comenzar</button>
         </div>
-        <div class="divArmaFiesta fondoCuadricula_BN">
-            <h1 class="titulosNaranjas">¡Arma tu fiesta ahora!</h1>
+    </div>
+    <!--TERMINA SECCION BANNER PRINCIPAL-->
+    <!--SECCION DE ARMA TU FIESTA-->
+    <div class="parent fondoCuadricula_BN">
+        <div class="div1">
+
+            <img class="imagenBosina" src="~/imagenes/componentespagina/bosinas.png" />
+
+        </div>
+        <div class="div2">
+
+            <h1 class="titulosNaranjas tt">¡Arma tu fiesta ahora!</h1>
             <p class="subTitulos">¿Quieres crear una experiencia personalizada para tus invitados?</p>
-            <p class="textosDescriptivos">
-                Selecciona entre una variedad de opciones de sonido, iluminación, efectos especiales y DJ para adaptarla a tus
-                necesidades y presupuesto.
-                Nuestro equipo profesional se encargará de que cada detalle esté perfectamente sincronizado, para que tú puedas
-                relajarte y disfrutar al máximo.
+            <p class="textosDescriptivos td">
+                Selecciona entre una variedad de opciones de sonido, iluminación, efectos especiales y DJ para adaptarla a tus necesidades y presupuesto. Nuestro equipo profesional se encargará de que cada detalle esté perfectamente sincronizado, para que tú puedas relajarte y disfrutar al máximo.
             </p>
             <div>
-                <a href="#comenzar">Comenzar</a>
+                <button class="c-button c-button--gooey">
+                    Arma tu fiesta
+                    <div class="c-button__blobs">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </button>
             </div>
+
         </div>
+
+    </div>
+    <!--TERMINA LA SECCION ARMA TU FIESTA-->
+    <!--SECCION PAQUETE TODO INCLUIDO-->
+    <div class="todoIncluido">
+        <h1 class="titulosNaranjas ttPTI">Paquetes todo incluido</h1>
+        <p class="textosDescriptivos tdPTI">
+            ¡Descubre nuestros exclusivos paquetes todo incluido en Sonido Emperador! Diseñados para brindarte una experiencia excepcional, nuestros paquetes combinan lo mejor en sonido, iluminación, efectos especiales y DJ en una sola oferta conveniente.
+        </p>
+
+        @{
+            int counter = 0;
+        }
+        <div class="tar">
+            @foreach (var paquete in Model)
+            {
+                if (counter >= 2)
+                {
+                    break;
+                }
+                <div class="tarjeta">
+                    <img class="imagen-targeta" src="@DS.ImagenRutaPaquetes@paquete.ImagenUrl" />
+                    <div class="contenido-tarjeta">
+                        <h2>@paquete.Nombre</h2>
+                        <p>
+                            @paquete.Descripcion
+                        </p>
+                        <div class="contenido-detalles">
+                            <div class="i1">
+                                <img class="imagen-reloj" src="~/imagenes/componentespagina/iconReloj.png" />
+
+                                <span>@paquete.Duracion</span>
+                            </div>
+                            <div class="i2">
+                                <img class="imagen-precio" src="~/imagenes/componentespagina/iconprecio.png" />
+
+                                <span> $@String.Format("{0:#,##0.000}", paquete.Precio)</span>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="#" class="boton">Detalles</a>
+                        </div>
+
+                    </div>
+                </div>
+                counter++;
+            }
+        </div>
+        <div style="text-align: center;" class="mt-5">
+
+            <a href="#" class="boton2">Ver mas...</a>
+
+        </div>
+
+
+    </div>
+
 </section>
 
