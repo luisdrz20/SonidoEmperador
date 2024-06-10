@@ -4,102 +4,413 @@
     ViewData["Title"] = "Home Page";
 }
 
-<section>
-
-
-    <!--SECCION BANNER PRINCIPAL-->
-    <div class="bannerPrincipal ">
-        <div class="logo-container">
-            <img src="~/imagenes/componentespagina/logocha.png" alt="Logo" class="logo" />
-            <p class="banner-text">
-                Explora nuestros servicios y descubre cómo podemos llevar tu evento al siguiente nivel.
-            </p>
-            <button class="botonBanner">Comenzar</button>
+<section >
+    <!----------------------------- BANNER Y CARRUSEL-------------------------------------------------------------------------------------------------------------->
+    <div class="carousel-container resposivo-banner-A">
+        <div class="overlay-content resposivo-banner-B">
+            <img src="~/imagenes/componentespagina/logoGrisVerde.png" alt="Logo" class="logo">
+            <p class="text ">Explora nuestros servicios y descubre cómo podemos llevar tu evento al siguiente nivel.</p>
+            <a class="btn boton-banner">Comenzar</a>
+        </div>
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="~/imagenes/componentespagina/banner1.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/imagenes/componentespagina/banner2.png" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/imagenes/componentespagina/banner3.png" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
-    <!--TERMINA SECCION BANNER PRINCIPAL-->
-    <!--SECCION DE ARMA TU FIESTA-->
-    <div class="parent fondoCuadricula_BN">
-        <div class="div1">
 
-            <img class="imagenBosina" src="~/imagenes/componentespagina/bosinas.png" />
+</section>
+
+<!----------------------------- ARMA TU FIESTA -------------------------------------------------------------------------------------------------------------->
+
+<section style="margin-top:50px; margin-bottom:50px; ">
+    <div class="container">
+        <div class="row g-4 align-items-xl-center" style="background-color: white; border-radius:15px;">
+
+            <!-- About image START -->
+            <div class="col-lg-7">
+                <div class="row pe-xl-5">
+                    <div class="col-sm-6">
+                        <!-- About image -->
+                        <img src="~/imagenes/componentespagina/perzonaliza1.jpg" class="rounded imagen-pri" alt="about-img" style="width: 100%; height: auto;">
+
+                        <!-- SVG decoration -->
+                        <figure class="text-end me-3 mt-n3">
+                        </figure>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <!-- Skill set -->
+                        <div class="row mb-4">
+                            <div class="col-sm-6 mb-4 mb-sm-0">
+                                <div class="bg-dark text-white rounded text-center p-3">
+                                    <span class="h2 text-white" style="font-weight: 700;">10+</span>
+                                    <p class="mb-0">Años de experiencia</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="rounded text-center p-3" style="background-color: #09B850;">
+                                    <span class="h2 text-white" style="font-weight: 700;">1.2K</span>
+                                    <p class="mb-0 text-white">Clientes muy Felices</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- About image -->
+                        <img src="~/imagenes/componentespagina/perzonaliza2.jpg" class="rounded imagen-pri" alt="about-img-2" style="width: 100%; height: auto;">
+                    </div>
+                </div> <!-- Row END -->
+            </div>
+            <!-- About image END -->
+            <!-- About content START -->
+            <div class="col-lg-5">
+
+                <h2 class="my-4" style="font-weight: bold;">Crear una experiencia personalizada</h2>
+                <p class="mb-4">
+                    Selecciona entre una variedad de opciones de sonido, iluminación, efectos especiales y DJ para adaptarla a tus necesidades y presupuesto. Nuestro equipo profesional se encargará de que cada detalle.
+                </p>
+                <!-- List -->
+                <ul class="list-group list-group-borderless mb-4">
+                    <li class="list-group-item heading-color d-flex mb-0">
+                        <i class="bi bi-music-note-beamed  me-2"></i>Sonido
+                    </li>
+                    <li class="list-group-item heading-color d-flex mb-0">
+                        <i class="bi bi-fire  me-2"></i>Efectos especiales
+                    </li>
+                    <li class="list-group-item heading-color d-flex mb-0">
+                        <i class="bi bi-lightbulb me-2"></i>Iluminación
+                    </li>
+                </ul>
+                <!-- Button -->
+                <a href="#" class="btn btn-dark mb-0 fw-bold" style="padding: 8px 65px 8px 65px;">Arma tu fiesta</a>
+
+            </div>
+            <!-- content END -->
 
         </div>
-        <div class="div2">
+    </div>
+</section>
 
-            <h1 class="titulosNaranjas tt">¡Arma tu fiesta ahora!</h1>
-            <p class="subTitulos">¿Quieres crear una experiencia personalizada para tus invitados?</p>
-            <p class="textosDescriptivos td">
-                Selecciona entre una variedad de opciones de sonido, iluminación, efectos especiales y DJ para adaptarla a tus necesidades y presupuesto. Nuestro equipo profesional se encargará de que cada detalle esté perfectamente sincronizado, para que tú puedas relajarte y disfrutar al máximo.
-            </p>
-            <div>
-                <button class="c-button c-button--gooey">
-                    Arma tu fiesta
-                    <div class="c-button__blobs">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </button>
+
+
+
+<!----------------------------- CONOCENOS -------------------------------------------------------------------------------------------------------------->
+
+
+<section style="margin-top:50px; margin-bottom:50px; background-image: url('@Url.Content("~/imagenes/componentespagina/fondoporque.png")'); background-size: cover; background-position: center;">
+    <div class="container px-4 py-5">
+        <h2 class="pb-2 border-bottom text-light fw-bold ">Por qué elegir nuestros servicios</h2>
+
+        <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
+            <div class="col d-flex flex-column align-items-start gap-2">
+                <h2 class="fw-bold text-body-emphasis text-light">Left-aligned title explaining these awesome features</h2>
+                <p class="text-body-secondary text-light">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+                <a href="#" class="btn fw-bold" style="background-color:#09B850;color:white;padding: 8px 65px 8px 65px;">Primary button</a>
             </div>
 
+            <div class="col">
+                <div class="row row-cols-1 row-cols-sm-2 g-4 ">
+
+                    <div class="col d-flex flex-column gap-2">
+                        <div style="background: linear-gradient(to bottom, transparent 15%, #292A2D 10%); border-radius:10px; height:100%; padding: 0 15px 0 15px; ">
+
+
+                            <div>
+                                <i class="bi bi-globe-americas" style="font-size: 40px; color:#09B850;"></i>
+                            </div>
+
+                            <h4 class="fw-bold text-light">Versatilidad</h4>
+                            <p class="text-body-secondary text-light">Podemos adaptarnos al tema y la atmósfera de su evento.</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col d-flex flex-column gap-2">
+                        <div style="background: linear-gradient(to bottom, transparent 15%, #292A2D 10%); border-radius:10px; height:100%; padding: 0 15px 0 15px; ">
+
+                            <div>
+                                <i class="bi bi-heart" style="font-size: 40px; color:#09B850;"></i>
+                            </div>
+                            <h4 class="fw-bold text-light">Pasión</h4>
+                            <p class="text-body-secondary text-light">Amamos lo que hacemos y estamos comprometidos a ofrecer el mejor servicio.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="col d-flex flex-column gap-2">
+
+                        <div style="background: linear-gradient(to bottom, transparent 15%, #292A2D 10%); border-radius:10px; height:100%; padding: 0 15px 0 15px; ">
+                            <div>
+                                <i class="bi bi-headphones" style="font-size: 40px; color:#09B850;"></i>
+                            </div>
+                            <h4 class="fw-bold text-light">Calidad</h4>
+                            <p class="text-body-secondary text-light">Somos DJ expertos que nos enorgullecemos de ofrecer música de la mejor calidad para su evento.</p>
+                        </div>
+                    </div>
+
+                    <div class="col d-flex flex-column gap-2">
+
+                        <div style="background: linear-gradient(to bottom, transparent 15%, #292A2D 10%); border-radius:10px; height:100%; padding: 0 15px 0 15px; ">
+                            <div>
+                                <i class="bi bi-music-note-beamed" style="font-size: 40px; color:#09B850;"></i>
+                            </div>
+                            <h4 class="fw-bold text-light">Profesionalismo</h4>
+                            <p class="text-body-secondary text-light">Estamos dedicados a brindar un servicio excepcional y hacer que su evento sea realmente memorable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
     </div>
-    <!--TERMINA LA SECCION ARMA TU FIESTA-->
-    <!--SECCION PAQUETE TODO INCLUIDO-->
-    <div class="todoIncluido">
-        <h1 class="titulosNaranjas ttPTI">Paquetes todo incluido</h1>
-        <p class="textosDescriptivos tdPTI">
-            ¡Descubre nuestros exclusivos paquetes todo incluido en Sonido Emperador! Diseñados para brindarte una experiencia excepcional, nuestros paquetes combinan lo mejor en sonido, iluminación, efectos especiales y DJ en una sola oferta conveniente.
-        </p>
+</section>
 
-        @{
-            int counter = 0;
-        }
-        <div class="tar">
+
+<!----------------------------- TODO INCLUIDO -------------------------------------------------------------------------------------------------------------->
+
+<section class="container">
+    <h2 class="pb-2 border-bottom text-dark fw-bold ">Paquetes todo incluido</h2>
+    <p style="margin-bottom:50px;">¡Descubre nuestros exclusivos paquetes todo incluido en Sonido Emperador! Diseñados para brindarte una experiencia excepcional, nuestros paquetes combinan lo mejor en sonido, iluminación, efectos especiales y DJ en una sola oferta conveniente.</p>
+
+
+    @{
+        int counter = 0;
+    }
+
+    <div class="container">
+        <div class="row">
+
+
+
             @foreach (var paquete in Model)
             {
                 if (counter >= 2)
                 {
                     break;
                 }
-                <div class="tarjeta">
-                    <img class="imagen-targeta" src="@DS.ImagenRutaPaquetes@paquete.ImagenUrl" />
-                    <div class="contenido-tarjeta">
-                        <h2>@paquete.Nombre</h2>
-                        <p>
-                            @paquete.Descripcion
-                        </p>
-                        <div class="contenido-detalles">
-                            <div class="i1">
-                                <img class="imagen-reloj" src="~/imagenes/componentespagina/iconReloj.png" />
 
-                                <span>@paquete.Duracion</span>
+                <div class="col-md-6 col-lg-6">
+                    <div class="card mb-3" style="max-width: 640px">
+                        <div class="row g-0">
+                            <div class="col-md-4" style="display: flex; align-items: stretch">
+                                <img src="@DS.ImagenRutaPaquetes@paquete.ImagenUrl" class="img-fluid rounded-start"
+                                     style="width: 100%; height: 100%; object-fit: cover" alt="Imagen" />
                             </div>
-                            <div class="i2">
-                                <img class="imagen-precio" src="~/imagenes/componentespagina/iconprecio.png" />
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold ">@paquete.Nombre</h5>
+                                    <p class="card-text">@paquete.Descripcion</p>
+                                    <p class="card-text">
 
-                                <span> $@String.Format("{0:#,##0.000}", paquete.Precio)</span>
+                                        <i class="bi bi-clock" style="font-size:25px; color:#202124; margin-right:10px;"></i>
+
+                                        <small class="text-body-secondary">@paquete.Duracion</small>
+
+                                    </p>
+
+                                    <p class="card-text">
+
+                                        <i class="bi bi-cash-stack" style="font-size:25px; color:#202124; margin-right:10px; "></i>
+                                        <small class="text-body-secondary">$@String.Format("{0:#,##0.000}", paquete.Precio)</small>
+
+                                    </p>
+                                    <a class="btn custom-btn">Detalles</a>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <a href="#" class="boton">Detalles</a>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
                 counter++;
+
             }
-        </div>
-        <div style="text-align: center;" class="mt-5">
-
-            <a href="#" class="boton2">Ver mas...</a>
 
         </div>
 
+        <div style="display:flex; align-items: center; justify-content: center; margin-top: 2em; margin-bottom:3em;">
+            <a class="btn text-light fw-bold " style="background-color:#202124; padding: 8px 65px 8px 65px;">Descubrir mas</a>
+        </div>
 
     </div>
-
 </section>
+
+
+
+<!----------------------------- FIN DE PAGINA -------------------------------------------------------------------------------------------------------------->
+
+<footer class="position-relative overflow-hidden pb-0 pt-6 pt-lg-8" style="  background: linear-gradient(to bottom, transparent 15%, #202124 15%);">
+
+
+    <section class="position-relative z-index-2 py-0 mb-n7">
+        <div class="container position-relative">
+            <div class="rounded position-relative overflow-hidden p-4 p-sm-5" style="background-color: #09B850; background-image: url('@Url.Content("~/imagenes/componentespagina/emperadorVerde.png")'); background-size: auto; ">
+
+                <!-- SVG decoration -->
+                <figure>
+                </figure>
+
+                <div class="row g-4 position-relative">
+                    <!-- Title and inputs -->
+                    <div class="col-lg-6">
+                        <!-- Title -->
+                        <h3 class="text-white fw-bold">Háblanos de tú evento</h3>
+
+                        <!-- Search -->
+                        <form class="col-md-10 rounded-2 p-2 mt-4" style="background-color: #ECF0F2">
+                            <div class="input-group">
+                                <input class="form-control focus-shadow-none border-0 me-1" type="email"
+                                       placeholder="Dirección de correo electrónico">
+                                <button type="button" class="btn btn-dark rounded-2">Suscribete</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="col-lg-5 col-xl-4 ms-auto text-lg-end">
+                        <ul class="list-group list-group-borderless mb-0">
+                            <li class="list-group-item mb-0 text-white" style="background-color: #09B850;">
+
+                                <i class="bi bi-headset me-1 "></i> Teléfono: 351 112 73 93
+
+                            </li>
+                            <li class="list-group-item text-white fw-normal mb-0" style="background-color: #09B850;">
+                                <i class="bi bi-geo-alt-fill me-1"></i> Lugar: Sahuayo Michoacán
+                            </li>
+                            <li class="list-group-item mb-0 text-white" style="background-color: #09B850;">
+
+                                <i class="bi bi-envelope me-1 "></i> Email: sonidoEmperador@gmail.com
+
+                            </li>
+                        </ul>
+                    </div>
+                </div> <!-- Row END -->
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- SVG decoration -->
+    <figure>
+    </figure>
+
+    <!-- SVG decoration -->
+    <div class="position-absolute top-0 end-0 mt-n3 me-n4">
+        <img src="assets/images/elements/decoration-pattern-2.svg" style="opacity:0.05;" alt="">
+    </div>
+
+    <div class="container position-relative mt-5">
+        <div class="row g-4 justify-content-between">
+
+            <!-- Widget 1 START -->
+            <div class="col-lg-4">
+                <!-- logo -->
+                <a class="me-0" href="index.html">
+                    <img class="light-mode-item h-40px" src="~/imagenes/componentespagina/logoVerdeChico.png" alt="logo">
+                </a>
+
+                <p class="mt-3 mb-2 text-light">En Sonido Emperador, nos especializamos en convertir tus eventos en experiencias inolvidables. Somos una empresa dedicada a la renta de equipos de luz y sonido de alta calidad, perfectos para cualquier tipo de celebración.</p>
+            </div>
+            <!-- Widget 1 END -->
+            <!-- Widget 2 START -->
+            <div class="col-lg-8 col-xxl-7">
+                <div class="row g-4">
+                    <!-- Link block -->
+                    <div class="col-6 col-md-4">
+                        <h6 class="mb-2 mb-md-4">Quick links</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item "><a class="nav-link pt-0 text-light" href="about-v1.html">Sobre nosotros</a></li>
+                            <li class="nav-item"><a class="nav-link text-light" href="contact-v1.html">Contáctanos</a></li>
+                            <li class="nav-item"><a class="nav-link text-light" href="sign-in.html">Iniciar sesión</a></li>
+                            <li class="nav-item"><a class="nav-link text-light" href="sign-up.html">Regitrarte</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Link block -->
+                    <div class="col-6 col-md-4">
+                        <h6 class="mb-2 mb-md-4">Community</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a class="nav-link text-light" href="faq.html">Productos</a></li>
+                            <li class="nav-item"><a class="nav-link text-light" href="faq.html">Paquetes</a></li>
+                            <li class="nav-item"><a class="nav-link text-light" href="#">Política de privacidad</a></li>
+                            <li class="nav-item"><a class="nav-link text-light" href="#">Terminos &amp; condiciones</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Link block -->
+                    <div class="col-md-4">
+                        <h6 class="mb-2 mb-md-4 text-light">Aplicación disponible en</h6>
+                        <div class="row g-2 mt-2 mb-4 mb-sm-5">
+                            <!-- Google play store button -->
+                            <div class="col-5 col-sm-4 col-md-6">
+                                <a href="#"> <img src="~/imagenes/componentespagina/playStore.png" alt="" width="130em"> </a>
+                            </div>
+                          
+                        </div>
+
+                        <!-- Social buttons -->
+                        <h6 class="mb-2 mb-md-4 text-light">Síguenos</h6>
+
+                        <ul class="list-inline mb-0 mt-3">
+                            <li class="list-inline-item">
+                                <a class="btn btn-xs btn-icon btn-dark" href="#">
+                                    <i class="bi bi-facebook lh-base"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                            <li class="list-inline-item">
+                                <a class="btn btn-xs btn-icon btn-dark" href="#">
+                                    <i class="bi bi-instagram lh-base"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                            <li class="list-inline-item">
+                                <a class="btn btn-xs btn-icon btn-dark" href="#">
+                                    <i class="bi bi-tiktok lh-base"></i>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Widget 2 END -->
+        </div>
+
+        <!-- Divider -->
+        <hr class="mt-4 mb-0">
+
+        <!-- Bottom footer -->
+
+    </div>
+</footer>
+
+
+
+
+
+
+
 

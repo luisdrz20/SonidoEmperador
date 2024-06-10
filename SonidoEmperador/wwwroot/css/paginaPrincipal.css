@@ -1,381 +1,97 @@
-﻿/* -------------------------------------------------------------------------------------------------------------- */
-/* ESTILOS DEL BANNER */
-/* -------------------------------------------------------------------------------------------------------------- */
+﻿
+.carousel-container {
+    position: relative;
+    width: 100%;
+}
 
-/* Estilo del banner */
-.bannerPrincipal {
-    background-image: url('../imagenes/componentespagina/djBanner.jpg');
-    height: 90vh; /* La altura del banner ocupa toda la altura de la ventana */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; /* Fija la imagen de fondo */
+.overlay-content {
+    position: absolute;
+    top: 20px; /* Ajusta según necesites */
+    left: 20px; /* Ajusta según necesites */
+    z-index: 10;
     display: flex;
-    align-items: center;
+    flex-direction: column;
 }
 
-/* Estilo del contenedor del logo */
-.logo-container {
-    animation: fadeInScale 3s ease-in-out forwards;
-    margin-left: 30px;
-}
-
-/* Estilo del logo */
 .logo {
-    width: 750px; /* Ajusta el tamaño del logo según tus necesidades */
+    margin-top: 10%;
+    margin-left: 3em;
+    max-width: 80%; /* Ajusta según necesites */
+}
+
+.text {
+    margin-top: 4px;
+    margin-left: 3em;
+    max-width: 600px;
+    color: #202124; /* Color del texto, ajusta según necesites */
+    font-weight: 500;
+    font-size: 1.1em; /* Ajusta según necesites */
+}
+
+.carousel-inner img {
+    width: 100%;
     height: auto;
 }
 
-
-/* Estilo del texto */
-.banner-text {
-    margin-top: 10px;
-    font-size: 17px;
-    color: white;
-    margin-left: 80px;
-    margin-right: 800px;
-}
-/* Animación para el logo */
-@keyframes fadeInScale {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-
-    50% {
-        opacity: 0.7;
-        transform: scale(1.1);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+.boton-banner {
+    margin-left: 3em;
+    max-width: 40%;
 }
 
-/* --------------------- */
-/* Boton banner
-/* --------------------- */
-
-.botonBanner {
-    --color: #EF3A2A;
-    padding: 0.4em 3em;
-    background-color: transparent;
-    border-radius: .3em;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: .1s;
+.boton-banner {
+    background-color: #202124; /* Color gris oscuro */
+    color: white; /* Texto blanco */
+    padding: 12px;
+    border-radius: 4px; /* Bordes redondeados */
     font-weight: 600;
-    font-size: 17px;
-    border: 3px solid;
-    color: var(--color);
-    z-index: 1;
-    margin-left: 80px;
-    margin-top: 15px;
+    border: none; /* Sin borde */
 }
 
-    .botonBanner::before, .button::after {
-        content: '';
-        display: block;
-        width: 50px;
-        height: 50px;
-        transform: translate(-50%, -50%);
-        position: absolute;
-        border-radius: 50%;
-        z-index: -1;
-        background-color: var(--color);
-        transition: 1s ease;
+    .boton-banner:hover {
+        background-color: #28a745; /* Color verde al pasar el cursor */
+        color: white; /* Texto blanco al pasar el cursor */
     }
 
-    .botonBanner::before {
-        top: -1em;
-        left: -1em;
-    }
-
-    .botonBanner::after {
-        left: calc(100% + 1em);
-        top: calc(100% + 1em);
-    }
-
-    .botonBanner:hover::before, .button:hover::after {
-        height: 480px;
-        width: 480px;
-    }
-
-    .botonBanner:hover {
-        color: rgb(10, 25, 30);
-    }
-
-    .botonBanner:active {
-        filter: brightness(.8);
-    }
-
-
-/* ----------------------------------------------------------------------------------------------------------------------------------------- */
-/* ARMA TU FIESTA
-/* ----------------------------------------------------------------------------------------------------------------------------------------- */
-
-
-
-.imagenBosina {
-    width: 450px;
-    /* Define el ancho de la imagen */
-    height: auto;
-    /* Mantén la proporción de aspecto original */
-    margin-top: 60px;
-    margin-left: 70px;
-    /* importante para las medidas de la imagen */
-    margin-right: 80px;
-    margin-bottom: 60px;
+/* Ajustar los controles del carrusel */
+.carousel-control-prev {
+    /* Puedes ajustar este valor según sea necesario */
+    width: 20%;
 }
 
-.parent {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-}
-
-.td {
-    margin-bottom: 20px;
-    margin-right: 130px;
-}
-.tt {
-    margin-top: 80px;
-}
-
-.div1 {
-    grid-area: 1 / 1 / 2 / 2;
-}
-
-.div2 {
-    grid-area: 1 / 2 / 2 / 3;
-    
-  
+.carousel-control-prev {
+    left: -50px; /* Mueve el botón más hacia la izquierda */
 }
 
 
 
 
-.c-button {
-    background-color: transparent;
-    font-weight: 700;
-    font-size: 16px;
-    text-decoration: none;
-    padding: 0.9em 1.6em;
-    cursor: pointer;
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    z-index: 1;
+
+/* Boton de las tarjetas */
+
+.custom-btn {
+    border: 3px solid #28a745;
+    border-radius: 3px;
+    color: #28a745;
+    font-weight:600;
+    padding: 5px 65px 5px 65px;
+    transition: all 0.3s ease;
 }
 
-.c-button--gooey {
-    color: #EF3A2A;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border: 4px solid #EF3A2A;
-    border-radius: 0;
-    position: relative;
-    transition: all 700ms ease;
-}
-
-    .c-button--gooey .c-button__blobs {
-        height: 100%;
-        filter: url(#goo);
-        overflow: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: -3px;
-        right: -1px;
-        z-index: -1;
-    }
-
-        .c-button--gooey .c-button__blobs div {
-            background-color: #EF3A2A;
-            width: 34%;
-            height: 100%;
-            border-radius: 100%;
-            position: absolute;
-            transform: scale(1.5) translateY(125%) translateZ(0);
-            transition: all 700ms ease;
-        }
-
-            .c-button--gooey .c-button__blobs div:nth-child(1) {
-                left: -5%;
-            }
-
-            .c-button--gooey .c-button__blobs div:nth-child(2) {
-                left: 30%;
-                transition-delay: 60ms;
-            }
-
-            .c-button--gooey .c-button__blobs div:nth-child(3) {
-                left: 66%;
-                transition-delay: 25ms;
-            }
-
-    .c-button--gooey:hover {
-        color: #fff;
-    }
-
-        .c-button--gooey:hover .c-button__blobs div {
-            transform: scale(1.4) translateY(0) translateZ(0);
-        }
-
-/* ----------------------------------------------------------------------------------------------------------------------------------------- */
-/* SECCION PAQUETES TODO INCLUIDO
-/* ----------------------------------------------------------------------------------------------------------------------------------------- */
-
-.todoIncluido{
-    background-color: #F6F6F6;
-    
-}
-
-.ttPTI{
-    padding-top:30px;
-    padding-left: 40px
-}
-
-.tdPTI {
-    padding-left: 40px;
-    margin-right:400px;
-    margin-bottom: 30px;
-}
-
-.tarjeta {
-    display: flex;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    
-    width: 680px;
-    height:350px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-    .tarjeta img {
-        width: 40%;
-    }
-
-.contenido-tarjeta {
-    padding: 25px;
-    /*Separacion del titulo a la tarjeta*/
-}
-
-
-
-.contenido-detalles {
-    margin: 30px 0;
-    /*Esto hace algo con el boton*/
-}
-
-    .contenido-detalles div {
-        display: flex;
-        /*Alinia el icono con el texto*/
-        align-items: center;
-    }
-
-
-
-.precio {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.boton {
-    background-color: white;
-    border: 2px solid #ff0000;
-    color: #ff0000;
-    padding: 8px 50px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    
-    transition: background-color 0.3s, color 0.3s;
-}
-
-    .boton:hover {
-        background-color: #ff0000;
+    .custom-btn:hover {
+        background-color: #28a745;
         color: white;
+
     }
 
-.imagen-reloj {
-    max-width: 8%;
-    height: auto;
-    margin-right: 1rem;
-}
 
-.imagen-precio {
-    max-width: 8%;
-    height: auto;
-    margin-right: 1rem;
-}
+@media (max-width: 768px) {
 
-.imagen-targeta {
-    padding: 20px;
-}
+    .resposivo-banner-A{
 
-.i1 {
-    margin-bottom: 10px;
-}
-
-.i2 {
-    margin-bottom: 10px;
-}
-
-.tar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-.boton2 {
-
-    background-color: white;
-    border: 3px solid #ff0000;
-    color: #ff0000;
-    padding: 8px 50px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
-    
-}
-
-    .boton2:hover {
-        background-color: #ff0000;
-        color: white;
+        margin-bottom: 14em;
     }
-/* ----------------------------------------------------------------------------------------------------------------------------------------- */
-/* MAS RECURSOS
-/* ----------------------------------------------------------------------------------------------------------------------------------------- */
-.titulosNaranjas {
-    font-weight: 800;
-    color: #EF3A2A;
-    font-size: 40px;
-}
 
-.subTitulos {
-    font-weight: 800;
-    font-size: 19px;
-}
-
-.textosDescriptivos {
-    font-size: 16px;
-}
-
-
-
-.fondoCuadricula_BN {
-    background-color: #ffffff;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23ffffff' stroke-width='0.3' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='scale(33.9) translate(-970.5 -727.88)'%3E%3Cuse fill='%23fcfcfc' href='%23s' y='2'/%3E%3Cuse fill='%23fcfcfc' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='2'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='scale(33.9) translate(-970.5 -727.88)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(33.9) translate(-970.5 -727.88)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(33.9) translate(-970.5 -727.88)'%3E%3Cg fill='%23f2f2f2'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='scale(33.9) translate(-970.5 -727.88)'%3E%3Cg fill='%23ffffff'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23efefef'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='scale(33.9) translate(-970.5 -727.88)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='scale(33.9) translate(-970.5 -727.88)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='scale(33.9) translate(-970.5 -727.88)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
-    background-attachment: fixed;
-    background-size: cover;
+    .resposivo-banner-B {
+        margin-top: 7em;
+    }
 }
