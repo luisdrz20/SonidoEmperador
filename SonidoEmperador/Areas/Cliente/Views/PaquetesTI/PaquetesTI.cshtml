@@ -1,0 +1,128 @@
+﻿@model SonidoEmperador.Modelos.Espesificaciones.PageList<SonidoEmperador.Modelos.Paquete>
+@using SonidoEmperador.Utilidades
+@{
+    ViewData["Title"] = "PaquetesTI";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/paquetesti.css" rel="stylesheet" />
+
+<section class="text-center bannerRedon" style="background-image: url('@Url.Content("~/imagenes/componentespagina/bannerPP.png")'); background-size: cover; background-position: center;">
+
+    <h2 class="text-light fw-bold" style="padding-top:1.5em; ">Paquetes de fiesta todo incluido</h2>
+    <p style="color:#858585;">Elige un paquete y deja el resto a nosotros.</p>
+
+    <div class="container my-2" style="padding-bottom:2em;">
+        <form asp-action="PaquetesTI" method="get">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-4">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control"
+                               placeholder="Buscar paquete..." aria-label="Buscar"
+                               aria-describedby="button-addon2"
+                               name="busqueda"
+                               value="@ViewData["BusquedaActual"]" />
+                        <button type="submit" class="btn bonTI text-light">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+
+
+
+<section class="container" style="padding-top:1.5em;">
+
+
+        <div class="row">
+
+            @foreach (var paquete in Model)
+            {
+
+
+                <div class="col-md-6 col-lg-6">
+                    <div class="card mb-3" style="max-width: 640px">
+                        <div class="row g-0">
+                            <div class="col-md-4" style="display: flex; align-items: stretch">
+                                <img src="@DS.ImagenRutaPaquetes@paquete.ImagenUrl" class="img-fluid rounded-start"
+                                     style="width: 100%; height: 100%; object-fit: cover" alt="Imagen" />
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title fw-bold ">@paquete.Nombre</h5>
+                                    <p class="card-text">@paquete.Descripcion</p>
+                                    <p class="card-text">
+
+                                        <i class="bi bi-clock" style="font-size:25px; color:#202124; margin-right:10px;"></i>
+
+                                        <small class="text-body-secondary">@paquete.Duracion</small>
+
+                                    </p>
+
+                                    <p class="card-text">
+
+                                        <i class="bi bi-cash-stack" style="font-size:25px; color:#202124; margin-right:10px; "></i>
+                                        <small class="text-body-secondary">$@String.Format("{0:#,##0.000}", paquete.Precio)</small>
+
+                                    </p>
+                                    <a class="btn custom-btn">Detalles</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            }
+
+        </div>
+
+        <!--Botones de navegacion-->
+        <div style="padding-bottom:1em;">
+
+
+            <a asp-action="PaquetesTI"
+               asp-route-pageNumber="@(1)"
+               asp-route-busquedaActual="@ViewData["BusquedaActual"]"
+               class="btn bonAbanRetro">
+
+                <i class="bi bi-skip-start-fill"></i>
+
+            </a>
+
+
+            <a asp-action="PaquetesTI"
+               asp-route-pageNumber="@((int)ViewData["PageNumber"]-1)"
+               class="btn bonAbanRetro @ViewData["Previo"]"
+               asp-route-busquedaActual="@ViewData["BusquedaActual"]">
+                Anterior
+
+            </a>
+            <span>Pagina @ViewData["PageNumber"] de @ViewData["TotalPaginas"]</span>
+
+            <a asp-action="PaquetesTI"
+               asp-route-pageNumber="@((int)ViewData["PageNumber"]+1)"
+               class="btn bonAbanRetro @ViewData["Siguiente"]"
+               asp-route-busquedaActual="@ViewData["BusquedaActual"]">
+                Siguiente
+            </a>
+
+
+            <a asp-action="PaquetesTI"
+               asp-route-pageNumber="@ViewData["TotalPaginas"]"
+               class="btn bonAbanRetro"
+               asp-route-busquedaActual="@ViewData["BusquedaActual"]">
+
+                <i class="bi bi-skip-end-fill"></i>
+
+            </a>
+        </div>
+
+   
+</section>

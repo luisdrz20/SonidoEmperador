@@ -1,0 +1,38 @@
+﻿.bonTI {
+    background-color: #09B850;
+    padding-right: 2em;
+    padding-left: 2em;
+    
+}
+
+    .bonTI:hover {
+        background-color: #038738;
+      
+    }
+
+
+.bonAbanRetro {
+    background-color: #C3C7D4;
+    color: #2A2B2E;
+}
+
+    .bonAbanRetro:hover {
+        background-color: #2A2B2E;
+        color: white;
+    }
+
+
+
+.btnPro {
+    background-color: #09B850;
+    color: white;
+    font-weight: 500;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+}
+
+    .btnPro:hover {
+        background-color: #292A2D;
+        color: white;
+        font-weight: 700;
+    }

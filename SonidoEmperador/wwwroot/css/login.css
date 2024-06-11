@@ -1,0 +1,32 @@
+﻿.bonG {
+    margin-bottom: .2em;
+    font-weight: 500;
+    color: #64748B;
+    border-radius: 7px;
+}
+
+.bonG:hover {
+    background-color: #EA4335;
+    color:white;
+}
+
+.bonF {
+    margin-bottom: .5em;
+    font-weight: 500;
+    color: #64748B;
+    border-radius: 7px;
+}
+
+    .bonF:hover {
+        background-color: #1877F2;
+        color: white;
+    }
+
+
+.bonIS {
+    font-weight: 500;
+    background-color: #09B850;
+    color: white;
+    padding: 7px;
+    margin-bottom:15px;
+}

@@ -10,7 +10,7 @@
         <div class="overlay-content resposivo-banner-B">
             <img src="~/imagenes/componentespagina/logoGrisVerde.png" alt="Logo" class="logo">
             <p class="text ">Explora nuestros servicios y descubre cómo podemos llevar tu evento al siguiente nivel.</p>
-            <a class="btn boton-banner">Comenzar</a>
+            <a class="btn boton-banner" href="#seccionATF">Comenzar</a>
         </div>
         <div id="carouselExampleIndicators" class="carousel slide">
             <div class="carousel-indicators">
@@ -44,7 +44,7 @@
 
 <!----------------------------- ARMA TU FIESTA -------------------------------------------------------------------------------------------------------------->
 
-<section style="margin-top:50px; margin-bottom:50px; ">
+<section id="seccionATF"  style="margin-top:50px; margin-bottom:50px; ">
     <div class="container">
         <div class="row g-4 align-items-xl-center" style="background-color: white; border-radius:15px;">
 
@@ -103,7 +103,7 @@
                     </li>
                 </ul>
                 <!-- Button -->
-                <a href="#" class="btn btn-dark mb-0 fw-bold" style="padding: 8px 65px 8px 65px;">Arma tu fiesta</a>
+                <a  class="btn btn-dark mb-0 fw-bold" style="padding: 8px 65px 8px 65px;" asp-area="Cliente" asp-controller="ProductosHome" asp-action="ProductosHome">Arma tu fiesta</a>
 
             </div>
             <!-- content END -->
@@ -124,9 +124,9 @@
 
         <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-5 py-5">
             <div class="col d-flex flex-column align-items-start gap-2">
-                <h2 class="fw-bold text-body-emphasis text-light">Left-aligned title explaining these awesome features</h2>
-                <p class="text-body-secondary text-light">Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
-                <a href="#" class="btn fw-bold" style="background-color:#09B850;color:white;padding: 8px 65px 8px 65px;">Primary button</a>
+                <h2 class="fw-bold text-body-emphasis text-light">Ritmo, luz y diversión: Sonido Emperador.</h2>
+                <p class="text-body-secondary text-light">Entendemos que cada evento es único y especial. Por eso, nos comprometemos a ofrecerte una experiencia personalizada y sin igual en cada ocasión. </p>
+                <a href="#" class="btn fw-bold" style="background-color:#09B850;color:white;padding: 8px 65px 8px 65px;">Conocenos</a>
             </div>
 
             <div class="col">
@@ -248,7 +248,7 @@
         </div>
 
         <div style="display:flex; align-items: center; justify-content: center; margin-top: 2em; margin-bottom:3em;">
-            <a class="btn text-light fw-bold " style="background-color:#202124; padding: 8px 65px 8px 65px;">Descubrir mas</a>
+            <a class="btn text-light fw-bold " style="background-color:#202124; padding: 8px 65px 8px 65px;" asp-area="Cliente" asp-controller="PaquetesTI" asp-action="PaquetesTI">Descubrir mas</a>
         </div>
 
     </div>
@@ -343,8 +343,8 @@
                         <ul class="nav flex-column">
                             <li class="nav-item "><a class="nav-link pt-0 text-light" href="about-v1.html">Sobre nosotros</a></li>
                             <li class="nav-item"><a class="nav-link text-light" href="contact-v1.html">Contáctanos</a></li>
-                            <li class="nav-item"><a class="nav-link text-light" href="sign-in.html">Iniciar sesión</a></li>
-                            <li class="nav-item"><a class="nav-link text-light" href="sign-up.html">Regitrarte</a></li>
+                            <li class="nav-item"><a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">Iniciar sesión</a></li>
+                            <li class="nav-item"><a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">Regitrarte</a></li>
                         </ul>
                     </div>
 
@@ -352,9 +352,9 @@
                     <div class="col-6 col-md-4">
                         <h6 class="mb-2 mb-md-4">Community</h6>
                         <ul class="nav flex-column">
-                            <li class="nav-item"><a class="nav-link text-light" href="faq.html">Productos</a></li>
-                            <li class="nav-item"><a class="nav-link text-light" href="faq.html">Paquetes</a></li>
-                            <li class="nav-item"><a class="nav-link text-light" href="#">Política de privacidad</a></li>
+                            <li class="nav-item"><a class="nav-link text-light" asp-area="Cliente" asp-controller="ProductosHome" asp-action="ProductosHome">Productos</a></li>
+                            <li class="nav-item"><a class="nav-link text-light" asp-area="Cliente" asp-controller="PaquetesTI" asp-action="PaquetesTI">Paquetes</a></li>
+                            <li class="nav-item"><a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Política de privacidad</a></li>
                             <li class="nav-item"><a class="nav-link text-light" href="#">Terminos &amp; condiciones</a></li>
                         </ul>
                     </div>
@@ -375,7 +375,7 @@
 
                         <ul class="list-inline mb-0 mt-3">
                             <li class="list-inline-item">
-                                <a class="btn btn-xs btn-icon btn-dark" href="#">
+                                <a class="btn btn-xs btn-icon btn-dark" href="https://www.facebook.com/sonido.emperador.sahuayo?locale=es_LA">
                                     <i class="bi bi-facebook lh-base"></i>
                                 </a>
                             </li>

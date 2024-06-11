@@ -2,3 +2,34 @@ body {
     font-family: "Montserrat";
     background-color: #F7FAFC;
 }
+
+
+
+
+/* nav var*/
+
+.linkNav {
+    position: relative;
+}
+
+    .linkNav::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        display: block;
+        margin-top: 5px;
+        right: 0;
+        background: #09B850;
+        transition: width 0.3s ease;
+    }
+
+    .linkNav:hover::after {
+        width: 100%;
+        left: 0;
+        background: #09B850;
+    }
+
+.linkNav:hover{
+    color:forestgreen;
+}

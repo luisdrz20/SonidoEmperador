@@ -6,21 +6,25 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
+            <a class="nav-link  linkNav" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage"> <i class="bi bi-person"></i>  @User.Identity?.Name!</a>
     </li>
     <li class="nav-item">
         <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                <button type="submit" class="nav-link btn btn-link  linkNav"><i class="bi bi-escape me-1"></i>Cerrar sesión</button>
         </form>
     </li>
 }
 else
 {
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            <a class="nav-link text-light linkNav " asp-area="Identity" asp-page="/Account/Register">
+                <i class="bi bi-arrow-up-circle me-2"></i>Registrarse
+            </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+            <a class="nav-link text-light linkNav" asp-area="Identity" asp-page="/Account/Login">
+                <i class="bi bi-arrow-right-circle me-2"></i>Iniciar sesión
+            </a>
     </li>
 }
 </ul>
