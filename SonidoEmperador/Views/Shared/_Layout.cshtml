@@ -27,6 +27,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 
+    <style>
+        /* CSS to make the header fixed */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1030;
+        }
+
+        body {
+            padding-top: 55px; /* Adjust this value based on the height of your header */
+
+
+        }
+
+
+    </style>
+
+
+
 </head>
 <body>
     <header >
@@ -52,7 +72,7 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link text-light linkNav" asp-area="Cliente" asp-controller="ProductosHome" asp-action="ProductosHome">Productos</a>
+                            <a class="nav-link text-light linkNav" asp-area="Cliente" asp-controller="ProductosHome" asp-action="Index">Productos</a>
                         </li>
 
 

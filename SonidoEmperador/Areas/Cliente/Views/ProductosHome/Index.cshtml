@@ -1,0 +1,117 @@
+﻿@model SonidoEmperador.Modelos.Espesificaciones.PageList<SonidoEmperador.Modelos.Producto>
+@using SonidoEmperador.Utilidades
+@{
+    ViewData["Title"] = "ProductosHome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<link href="~/css/paquetesti.css" rel="stylesheet" />
+
+<section class="text-center bannerRedon" style="background-image: url('@Url.Content("~/imagenes/componentespagina/bannerPP.png")'); background-size: cover; background-position: center;">
+
+    <h2 class="text-light fw-bold" style="padding-top:1.5em;">Productos para rentar</h2>
+    <p style="width:40%; margin: 0 auto; padding-bottom:.5em; color:#858585;">Selecciona entre una variedad de opciones de sonido, iluminación y efectos especiales para tus necesidades y presupuesto.</p>
+
+    <div class="container my-2" style="padding-bottom:2em;">
+        <form asp-action="ProductosHome" method="get">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-4">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control"
+                               placeholder="Buscar producto..." aria-label="Buscar"
+                               aria-describedby="button-addon2"
+                               name="busqueda"
+                               value="@ViewData["BusquedaActual"]" />
+                        <button type="submit" class="btn bonTI text-light">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+
+
+
+
+
+<section class="container ">
+
+
+
+    <!--Mostramos los productos-->
+    <div class="row">
+        @foreach (var producto in Model)
+        {
+            <div class="col-lg-3 col-md-6 col-sm-6 d-flex">
+
+                <div class="card w-100 my-2">
+                    <img src="@DS.ImagenRuta@producto.ImagenUrl"
+                         class="card-img-top" style="aspect-ratio:1/1" />
+                    <div class="card-body d-flex flex-column">
+                        <h5>
+                            @producto.Nombre
+                        </h5>
+                        <p class="card-text">
+                            $@String.Format("{0:#,##0.000}", producto.Precio)
+                            x día
+                        </p>
+                        <div class="card-footer d-flex align-items-end pt-3 px-0 pb-0 mt-auto bg-white">
+                            <a class="btn btnPro">
+                                <i class="bi bi-caret-right"></i>
+                                Detalles
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        }
+    </div>
+    <!--->
+    <!--Botones de navegacion-->
+    <div style="padding-bottom:1em;">
+
+
+        <a asp-action="Index"
+           asp-route-pageNumber="@(1)"
+           asp-route-busquedaActual="@ViewData["BusquedaActual"]"
+           class="btn bonAbanRetro">
+            <i class="bi bi-skip-start-fill"></i>
+        </a>
+
+
+        <a asp-controller="ProductosHome" asp-action="Index"
+           asp-route-pageNumber="@((int)ViewData["PageNumber"]-1)"
+           class="btn bonAbanRetro @ViewData["Previo"]"
+           asp-route-busquedaActual="@ViewData["BusquedaActual"]">
+            Anterior
+
+        </a>
+        <span>Pagina @ViewData["PageNumber"] de @ViewData["TotalPaginas"]</span>
+
+        <a asp-controller="ProductosHome" asp-action="Index"
+           asp-route-pageNumber="@((int)ViewData["PageNumber"]+1)"
+           class="btn bonAbanRetro @ViewData["Siguiente"]"
+           asp-route-busquedaActual="@ViewData["BusquedaActual"]">
+            Siguiente
+        </a>
+
+
+        <a asp-controller="ProductosHome" asp-action="Index"
+           asp-route-pageNumber="@ViewData["TotalPaginas"]"
+           class="btn bonAbanRetro"
+           asp-route-busquedaActual="@ViewData["BusquedaActual"]">
+            <i class="bi bi-skip-end-fill"></i>
+        </a>
+    </div>
+
+</section>
+

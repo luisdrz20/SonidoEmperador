@@ -22,7 +22,7 @@ namespace SonidoEmperador.Areas.Cliente.Controllers
             _unidadTrabajo = unidadTrabajo;
         }
 
-        public IActionResult ProductosHome(int pageNumber = 1, string busqueda = "",
+        public IActionResult Index(int pageNumber = 1, string busqueda = "",
                                     string busquedaActual = "")
         {
             if (!String.IsNullOrEmpty(busqueda))
@@ -42,7 +42,7 @@ namespace SonidoEmperador.Areas.Cliente.Controllers
             Parametros parametros = new Parametros()
             {
                 PageNumber = pageNumber,
-                PageSize = 4//Controla la cantidad de articulos por pagina
+                PageSize = 8//Controla la cantidad de articulos por pagina
             };
             var resultado = _unidadTrabajo.Producto.ObtenerTodosPaginado(parametros);
 
